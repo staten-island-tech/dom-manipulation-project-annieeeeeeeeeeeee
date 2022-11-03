@@ -1,15 +1,16 @@
+console.log("connected");
+
 const DOMSelectors = {
-  input: document.querySelectorAll(".form"),
-  button: document.querySelectorAll(".btn"),
-  background: document.getElementById("#background"),
+  input: document.querySelector(".form"),
+  button: document.querySelector(".btn"),
+  box: document.getElementById("#box"),
+  heading: document.getElementById("#heading"),
+  paragraph: document.getElementById("#text"),
 };
-
-console.log(DOMSelectors);
-
-function test(background) {
-  background.style.backgroundColor = "red";
+function test(changeTest) {
+  changeTest.innerHTML = "HEY";
 }
 
 DOMSelectors.button.addEventListener("click", function () {
-  test(DOMSelectors.background);
+  test(DOMSelectors.paragraph);
 });
