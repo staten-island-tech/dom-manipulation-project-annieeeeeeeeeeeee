@@ -1,16 +1,23 @@
 console.log("connected");
 
 const DOMSelectors = {
-  input: document.querySelector(".form"),
+  form: document.getElementById("form"),
   button: document.querySelector(".btn"),
-  box: document.getElementById("#box"),
-  heading: document.getElementById("#heading"),
-  paragraph: document.getElementById("#text"),
-};
-function test(changeTest) {
-  changeTest.innerHTML = "HEY";
-}
+  heading: document.getElementById("heading"),
 
-DOMSelectors.button.addEventListener("click", function () {
-  test(DOMSelectors.paragraph);
+  //paragraph: document.getElementById("#text"),
+};
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log(event);
 });
+
+function display() {
+  DOMSelectors.
+}
+const albumName = document.getElementById("title").value;
+const artistName = document.getElementById("artist").value;
+const img = document.getElementById("url").value;
+
+console.log(albumName);
