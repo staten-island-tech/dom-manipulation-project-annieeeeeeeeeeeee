@@ -23,6 +23,7 @@ h1 {
 
 h2 {
   font-size: var(--h2);
+  margin-top: 1.4rem;
 }
 
 h3 {
@@ -114,7 +115,7 @@ h5 {
   background-color: #131313;
   color: white;
   align-items: center;
-  padding-bottom: 29px;
+  padding-bottom: 5rem;
 }
 .display-img {
   width: 100%;
