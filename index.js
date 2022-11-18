@@ -21,13 +21,6 @@ function deleteAlbum(target) {
   }
 }
 
-/*
-function removeAlbum() {
-  const element = DOMSelectors.displaySection;
-  element.remove();
-}
-*/
-
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -61,10 +54,3 @@ DOMSelectors.displaySection.addEventListener("click", function (event) {
   deleteAlbum(event.target);
   event.preventDefault();
 });
-
-/*
-DOMSelectors.displaySection.addEventListener("click", function (event) {
-  event.preventDefault();
-  removeAlbum();
-});
-*/
