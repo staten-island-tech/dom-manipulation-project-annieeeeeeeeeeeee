@@ -6,7 +6,7 @@ const DOMSelectors = {
   album: document.getElementById("title"),
   artist: document.getElementById("artist"),
   url: document.getElementById("url"),
-  removebtn: document.querySelectorAll(".remove btn"),
+  //removebtn: document.querySelectorAll(".remove btn"),
 };
 
 function clearFields() {
@@ -15,12 +15,12 @@ function clearFields() {
   DOMSelectors.url.value = "";
 }
 
-function deleteAlbum(target) {
+/*function removeAlbum(target) {
   if (target.className === "remove btn") {
     target.parentElement.remove();
   }
 }
-
+*/
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -50,7 +50,19 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   clearFields();
 });
 
+function removeAlbumParent() {
+  let displayCard = document.querySelectorAll(".display-card");
+  console.log(displayCard);
+  let removeBtn = document.querySelectorAll(".remove-btn");
+
+  removeAlbum();
+  {
+    displayCard.remove;
+  }
+  removeBtn.forEach();
+}
+
 DOMSelectors.displaySection.addEventListener("click", function (event) {
-  deleteAlbum(event.target);
+  removeAlbum(event.target);
   event.preventDefault();
 });
