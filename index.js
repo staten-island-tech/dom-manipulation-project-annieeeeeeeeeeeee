@@ -13,12 +13,6 @@ function clearFields() {
   DOMSelectors.url.value = "";
 }
 
-function removeAlbum(target) {
-  if (target.className === "remove-btn") {
-    target.parentElement.remove();
-  }
-}
-
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -44,10 +38,13 @@ DOMSelectors.form.addEventListener("submit", function (event) {
     <button class="remove-btn">Remove Album</button>
   </div> `
   );
+  let removeBtn = document.querySelectorAll(".remove-btn");
+
+  removeBtn.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.target.parentElement.remove();
+    });
+  });
 
   clearFields();
-});
-
-document.querySelector(".display").addEventListener("click", function (e) {
-  removeAlbum(e.target);
 });
