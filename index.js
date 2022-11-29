@@ -13,6 +13,22 @@ function clearFields() {
   DOMSelectors.url.value = "";
 }
 
+function inject(albumName, artistName, img) {
+  DOMSelectors.displaySection.insertAdjacentHTML(
+    "beforeend",
+    `<div class="display-card">
+<img
+  class="display-img"
+  src=${img}
+/>
+<h2 class="display-album">${albumName}</h2>
+<h3 class="display-artist">${artistName}</h3>
+
+<button class="remove-btn">Remove Album</button>
+</div> `
+  );
+}
+
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -25,19 +41,8 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   let img = DOMSelectors.url.value;
   console.log(img);
 
-  DOMSelectors.displaySection.insertAdjacentHTML(
-    "beforeend",
-    `<div class="display-card">
-    <img
-      class="display-img"
-      src=${img}
-    />
-    <h2 class="display-album">${albumName}</h2>
-    <h3 class="display-artist">${artistName}</h3>
-    
-    <button class="remove-btn">Remove Album</button>
-  </div> `
-  );
+  inject(albumName, artistName, img);
+
   let removeBtn = document.querySelectorAll(".remove-btn");
 
   removeBtn.forEach((btn) => {
