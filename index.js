@@ -29,9 +29,7 @@ function inject(albumName, artistName, img) {
   );
 }
 
-DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault();
-
+function createCard() {
   let albumName = DOMSelectors.album.value;
   console.log(albumName);
 
@@ -42,6 +40,11 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   console.log(img);
 
   inject(albumName, artistName, img);
+}
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  createCard();
 
   let removeBtn = document.querySelectorAll(".remove-btn");
 
